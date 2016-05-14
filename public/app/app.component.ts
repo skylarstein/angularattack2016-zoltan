@@ -5,7 +5,7 @@ import {CompanyService} from './company/company.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>',
+    template: '<h1>The ' + faker.random.word() + ' ' + faker.random.word() + ' App</h1>',
     providers: [CompanyService]
 })
 export class AppComponent {

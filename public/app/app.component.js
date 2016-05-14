@@ -24,7 +24,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>',
+            template: '<h1>The ' + faker.random.word() + ' ' + faker.random.word() + ' App</h1>',
             providers: [company_service_1.CompanyService]
         }), 
         __metadata('design:paramtypes', [company_service_1.CompanyService])

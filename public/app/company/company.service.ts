@@ -8,7 +8,7 @@ export class CompanyService {
     getName() {
          return this.http.get('http-get-proxy/' + encodeURIComponent('http://www.namemesh.com/domain-name-search/pickle?show=1'))
           .subscribe(function(result) {
-              console.log(result,'test');
+              console.log(JSON.stringify(result),'test');
           });
     }
 }
