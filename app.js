@@ -39,4 +39,29 @@ app.use(function(req, res, next) {
 //
 app.use(express.static(__dirname + '/public'));
 
+// Route not found handler (404). This is the last route we'll add to our middleware stack.
+// If we make it this far we know no other route handled the request.
+//
+app.use((req, res) =>
+{
+  res.status(404).render('error.ejs', {
+    title   : 'Yeah, wow. I have no idea where that is.',
+    code    : '404',
+    message : `${req.method} ${req.headers.host}${req.url}`,
+    stack   : ''
+  });
+});
+
+// Unhandled errors (500)
+//
+app.use((error, req, res, next) =>
+{
+  res.status(500).render('error.ejs', {
+    title   : 'Yeah, that\'s broken.',
+    code    : '500',
+    message : `${req.method} ${req.headers.host}${req.url}`,
+    stack   : app.get('env') === 'development' ? error.stack : ''
+  });
+});
+
 module.exports = app;

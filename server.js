@@ -30,3 +30,28 @@ httpServer.on('listening', () => {
 
   console.log(`HTTP server listening on ${bind} on ${os.hostname()}`);
 });
+
+httpServer.on('error', error => {
+  if(error.syscall !== 'listen') {
+    throw error;
+  }
+
+  const bind = (typeof port === 'string') ? `Pipe ${port}` : `Port ${port}`;
+
+  switch(error.code) {
+
+    case 'EACCES':
+      console.error(`ERROR: ${bind} requires elevated privileges`);
+      process.exit(1);
+      break;
+
+    case 'EADDRINUSE':
+      console.error(`ERROR: ${bind} is already in use`);
+      process.exit(1);
+      break;
+
+    default:
+      throw error;
+  }
+});
+
