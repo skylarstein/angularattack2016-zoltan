@@ -9,15 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+// services
+var company_service_1 = require('./company/company.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_CompanyService) {
+        this._CompanyService = _CompanyService;
     }
+    AppComponent.prototype.getCompanyName = function () {
+        var _this = this;
+        this._CompanyService.getName().then(function (name) { return _this.name = name; });
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.getCompanyName();
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: '<h1>My First Angular 2 App</h1>',
+            providers: [company_service_1.CompanyService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [company_service_1.CompanyService])
     ], AppComponent);
     return AppComponent;
 }());
