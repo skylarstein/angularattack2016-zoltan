@@ -4,7 +4,7 @@
   "description": "AngularAttack 2016 entry for Team Zoltan!",
   "main": "server.js",
   "scripts": {
-    "postinstall": "bash ./post-install.sh",
+    "postinstall": "cd public && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,2 +1,0 @@
-cd public
-npm install
