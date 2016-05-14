@@ -6,7 +6,7 @@ import {Http, HTTP_PROVIDERS} from '@angular/http';
 export class CompanyService {
     constructor(private http: Http) { }
     getName() {
-         return this.http.get('http://say-something-smart.herokuapp.com')
+         return this.http.get('http-get-proxy/' + encodeURIComponent('http://www.namemesh.com/domain-name-search/pickle?show=1'))
           .subscribe(function(result) {
               console.log(result,'test');
           });
