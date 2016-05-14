@@ -9,14 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var giphy_service_1 = require('./components/giphy.service');
 // services
 var company_service_1 = require('./company/company.service');
 var AppComponent = (function () {
-    function AppComponent(_CompanyService) {
+    function AppComponent(_CompanyService, _GiphyService) {
         this._CompanyService = _CompanyService;
+        this._GiphyService = _GiphyService;
     }
     AppComponent.prototype.getCompanyName = function (word1, word2) {
         this._CompanyService.getName(word1, word2);
+    };
+    AppComponent.prototype.getGiphy = function () {
+        this._GiphyService.getImgUrl('wtf is this shit');
     };
     AppComponent.prototype.ngOnInit = function () {
         var word1 = faker.random.word();
@@ -28,8 +33,8 @@ var AppComponent = (function () {
             selector: 'my-app',
             template: '<h1>The ' + faker.random.word() + ' ' + faker.random.word() + ' App</h1>',
             providers: [company_service_1.CompanyService]
-        }), 
-        __metadata('design:paramtypes', [company_service_1.CompanyService])
+        }),
+        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService])
     ], AppComponent);
     return AppComponent;
 }());
