@@ -7,6 +7,9 @@
     "postinstall": "cd public && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "4.4.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rumblex/angularattack2016-zoltan.git"
