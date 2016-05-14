@@ -10,6 +10,7 @@ const express = require('express');
 const router  = express.Router();
 const Blob    = require('../models/blob.js');
 const _       = require('underscore');
+const http    = require('http');
 
 router.get('/blob/:uuid', (req, res, next) => {
 
@@ -47,6 +48,24 @@ router.put('/blob/:uuid', (req, res, next) => {
       res.status(200).send(`OK ${req.params.uuid}`);
     }
   });
+});
+
+router.get('/http-get-proxy/:url', (req, res, next) => {
+  try {
+    let getRequest = http.get(decodeURIComponent(req.params.url), response => {
+      let body = '';
+      response.on('data', data => (body += data));
+      response.on('end', () =>  res.status(200).send(body));
+      response.on('error', err => res.status(500).send(err.message));
+    });
+
+    getRequest.on('error', function (err) {
+      res.status(500).send(err);
+    });
+  }
+  catch(e) {
+    res.status(500).send(err);
+  }
 });
 
 module.exports = router;
