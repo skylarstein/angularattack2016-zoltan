@@ -11,6 +11,7 @@ const path       = require('path');
 const logger     = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
+const routes     = require('./routes/routes.js');
 
 // Connect to our database
 //
@@ -35,15 +36,18 @@ app.use(function(req, res, next) {
   }
 });
 
-// Serve up our static client-side files
+// Serve up static client-side files
 //
 app.use(express.static(__dirname + '/public'));
+
+// Mount Express app routes
+//
+app.use('/', routes);
 
 // Route not found handler (404). This is the last route we'll add to our middleware stack.
 // If we make it this far we know no other route handled the request.
 //
-app.use((req, res) =>
-{
+app.use((req, res) => {
   res.status(404).render('error.ejs', {
     title   : 'Yeah, wow. I have no idea where that is.',
     code    : '404',
@@ -54,8 +58,7 @@ app.use((req, res) =>
 
 // Unhandled errors (500)
 //
-app.use((error, req, res, next) =>
-{
+app.use((error, req, res, next) => {
   res.status(500).render('error.ejs', {
     title   : 'Yeah, that\'s broken.',
     code    : '500',
