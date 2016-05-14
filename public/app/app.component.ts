@@ -9,7 +9,7 @@ import {CompanyService} from './company/company.service';
     providers: [CompanyService]
 })
 export class AppComponent {
-    constructor(private _CompanyService: CompanyService) { },
+    constructor(private _CompanyService: CompanyService) { }
     getCompanyName() {
         this._CompanyService.getName();
       }
