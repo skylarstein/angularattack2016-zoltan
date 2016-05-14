@@ -10,10 +10,12 @@ import {CompanyService} from './company/company.service';
 })
 export class AppComponent {
     constructor(private _CompanyService: CompanyService) { }
-    getCompanyName() {
-        this._CompanyService.getName();
+    getCompanyName(word1,word2) {
+        this._CompanyService.getName(word1,word2);
       }
     ngOnInit() {
-        this.getCompanyName();
+        var word1 = faker.random.word();
+        var word2 = faker.random.word();
+        this.getCompanyName(word1, word2);
     }
 }

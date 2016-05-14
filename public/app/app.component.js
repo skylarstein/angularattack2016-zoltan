@@ -15,11 +15,13 @@ var AppComponent = (function () {
     function AppComponent(_CompanyService) {
         this._CompanyService = _CompanyService;
     }
-    AppComponent.prototype.getCompanyName = function () {
-        this._CompanyService.getName();
+    AppComponent.prototype.getCompanyName = function (word1, word2) {
+        this._CompanyService.getName(word1, word2);
     };
     AppComponent.prototype.ngOnInit = function () {
-        this.getCompanyName();
+        var word1 = faker.random.word();
+        var word2 = faker.random.word();
+        this.getCompanyName(word1, word2);
     };
     AppComponent = __decorate([
         core_1.Component({
