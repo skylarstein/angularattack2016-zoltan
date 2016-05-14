@@ -11,7 +11,7 @@ import {CompanyService} from './company/company.service';
 export class AppComponent {
     constructor(private _CompanyService: CompanyService) { },
     getCompanyName() {
-        this._CompanyService.getName().then(name => this.name = name);
+        this._CompanyService.getName();
       }
     ngOnInit() {
         this.getCompanyName();

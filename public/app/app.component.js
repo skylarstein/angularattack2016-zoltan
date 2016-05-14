@@ -16,8 +16,7 @@ var AppComponent = (function () {
         this._CompanyService = _CompanyService;
     }
     AppComponent.prototype.getCompanyName = function () {
-        var _this = this;
-        this._CompanyService.getName().then(function (name) { return _this.name = name; });
+        this._CompanyService.getName();
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
