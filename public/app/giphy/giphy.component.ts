@@ -1,6 +1,6 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
 import {GiphyService} from "./giphy.service";
-import {Giphy} from '../models/giphy';
+import {Giphy} from './giphy.model';
 
 @Component({
   selector: 'giphy-img',
