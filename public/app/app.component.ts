@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 // services
 import {CompanyService} from './company/company.service';
-import { GiphyService } from './components/giphy.service';
+import { GiphyService } from './giphy/giphy.service';
 import {EmployeeService} from './employee/employee.service';
 
 @Component({

@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 // services
 var company_service_1 = require('./company/company.service');
-var giphy_service_1 = require('./components/giphy.service');
+var giphy_service_1 = require('./giphy/giphy.service');
 var employee_service_1 = require('./employee/employee.service');
 var AppComponent = (function () {
     function AppComponent(_CompanyService, _GiphyService, _EmployeeService) {
