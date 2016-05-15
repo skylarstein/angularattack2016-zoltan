@@ -19,14 +19,14 @@ var AppComponent = (function () {
         this._CompanyService.getName(word1, word2);
     };
     AppComponent.prototype.ngOnInit = function () {
-        var word1 = faker.random.word();
-        var word2 = faker.random.word();
+        var word1 = 'test'; //faker.random.word();
+        var word2 = 'test2'; //faker.random.word();
         this.getCompanyName(word1, word2);
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>The ' + faker.random.word() + ' ' + faker.random.word() + ' App</h1>',
+            template: '<h1>The App</h1>',
             providers: [company_service_1.CompanyService]
         }), 
         __metadata('design:paramtypes', [company_service_1.CompanyService])
