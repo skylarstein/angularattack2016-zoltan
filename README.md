@@ -1,48 +1,21 @@
-# This is your [AngularAttack](https://www.angularattack.com) 2016 Repo
+# Welcome to Team Zoltan's [AngularAttack](https://www.angularattack.com) 2016 Repo
 
-This repo is the start of your AngularAttack 2016 entry. It contains the simple [Angular2 starter](https://angular.io/docs/ts/latest/quickstart.html) files.
+Backend: Heroku NodeJS 4.4.4, serving Angular client files from /public
 
-**DO NOT MAKE ANY CODE CHECKINS TO THIS REPOSITORY BEFORE THE COMPETITION OFFICIALLY BEGINS.**
+### Production App
 
-**DOING SO COULD DISQUALIFY YOU.**
+https://team-zoltan.herokuapp.com
 
+### Local environment setup
 
-However, before the competition starts, there are some things we encourage you to do to get prepared for the competition.
-
-
-### Step 1) Get Your Local Environment setup
-
-Clone this repo locally, and make sure all your team members have access to it.
-
-* Install the latest [Node / NPM](https://nodejs.org).
+* Install [Node / NPM](https://nodejs.org).
 
 * `git clone git@github.com:rumblex/angularattack2016-zoltan.git`
 
 * `cd angularattack2016-zoltan`
 
-* `npm install`
+* `npm install` to install the NodeJS dependencies, the Angular client side dependencies, and to compile the client side TypeScript. See the "postinstall" script command in /package.json for details.
 
-* `npm start` will start the server locally to test that everything is running correctly
+* Create a local .env file. This is used to include sensitive credentials that should not be commited into source control. In the case of Heroku deployment these would be defined as config vars.
 
-
-### Step 2) Deploy Your App
-
-While you can't make any checkins before the comp, what you **can** do right now is deploy this sample app to [Surge](https://surge.sh) (our competition hosting provider).
-
-* `npm install -g surge`
-
-* `surge .`
-
-Note: please do not remove the `CNAME` file, as that tells it where to deploy to.
-
-If you receive an error message `"You do not have permission to publish to zoltan.2016.angularattack.io"`, it might mean another team member has already deployed your project to Surge. Ask them to run the next step to give you access.
-
-### Step 3) Add Your Team Members to Surge
-
-* `surge . --add brett.cassedy@gmail.com,brad@habitera.com,skylar@peringer.com,maxwellmears@gmail.com`
-
-
-### Step 4) Wait til competition starts
-
-It begins at exactly [May 14 at 00:00 UTC](https://www.wolframalpha.com/input/?i=May+14,+2016+0:00+UTC). Once the competition starts,   you can write over this project.
-
+* `npm start` to start the local Node server
