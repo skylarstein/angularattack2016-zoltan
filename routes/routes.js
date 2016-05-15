@@ -105,7 +105,7 @@ router.get('/random/company/:count', (req, res, next) => {
   let companies = [];
   for(var n = 0; n < req.params.count; ++n) {
     companies.push({
-      companyName : faker.company.companyName(),
+      companyName : fakeCompanyName(),
       companySuffix : faker.company.companySuffix(),
       catchPhrase : faker.company.catchPhrase(),
       bs : faker.company.bs(),
