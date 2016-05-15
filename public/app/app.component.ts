@@ -7,17 +7,19 @@ import { YoutubeService } from './youtube/youtube.service';
 import {EmployeeService} from './employee/employee.service';
 
 @Component({
-  selector: 'my-app',
-  template: '<h1>The App</h1>',
-  providers: [CompanyService, GiphyService, YoutubeService, EmployeeService]
+    selector: 'my-app',
+    template: '<h1>The App</h1>',
+    providers: [CompanyService, GiphyService, YoutubeService, EmployeeService]
 })
 export class AppComponent {
-  constructor(private _CompanyService: CompanyService, private _GiphyService: GiphyService, private _YoutubeService: YoutubeService, private _EmployeeService: EmployeeService) { }
-    getCompanyName(word1: string, word2: string) {
-      this._CompanyService.getName();
+    constructor(private _CompanyService: CompanyService, private _GiphyService: GiphyService, private _YoutubeService: YoutubeService, private _EmployeeService: EmployeeService) { }
+    getCompanyName() {
+        this._CompanyService.getDomainName().then(function(result: any) {
+            console.log(JSON.stringify(result._body),'test');
+         });
     }
     getGiphy(phrase: string) {
-      this._GiphyService.getImgUrl(phrase);
+        this._GiphyService.getImgUrl(phrase);
     }
     getVideo() {
       this._YoutubeService.getVideo().then(function(result) {
@@ -25,16 +27,15 @@ export class AppComponent {
       });
     }
     getEmployee() {
-      this._EmployeeService.getEmployee().subscribe(function(result) {
-        console.log('>>> RANDOM EMPLOYEE DATA', result.json());
-      });
+        this._EmployeeService.getEmployee().subscribe(function(result) {
+            console.log('>>> RANDOM EMPLOYEE DATA', result.json());
+        });
     }
     ngOnInit() {
-      var word1 = 'yo'; //faker.random.word();
-      var word2 = 'dawg';//faker.random.word();
-      this.getCompanyName(word1, word2);
-      this.getGiphy('picard wtf');
-      this.getVideo();
-      this.getEmployee();
+        this.getCompanyName();
+        this.getGiphy('picard wtf');
+        this.getCompanyName();
+        this.getVideo();
+        this.getEmployee();
     }
 }
