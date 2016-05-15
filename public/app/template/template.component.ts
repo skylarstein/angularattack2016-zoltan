@@ -37,6 +37,8 @@ export class TemplateComponent {
         self.catchPhrase   = companyData.catchPhrase;
         self.bs            = companyData.bs;
         self.bsBuzz        = companyData.bsBuzz;
+        self.primaryColor = ['red', 'green', 'blue', 'orange', 'yellow'][Math.floor(Math.random() * 5)]
       });
   }
 }
+
