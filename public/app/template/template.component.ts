@@ -37,7 +37,8 @@ export class TemplateComponent {
         self.catchPhrase   = companyData.catchPhrase;
         self.bs            = companyData.bs;
         self.bsBuzz        = companyData.bsBuzz;
-        self.primaryColor = ['red', 'green', 'blue', 'orange', 'yellow'][Math.floor(Math.random() * 5)]
+        self.primaryColor = ['#318dbc', '#fc4538', '#1469aa', '#fb8c18',  '#0e427f', '#5ac2cb', '#7ecca8', '#fed200','#cdeac6', '#febb60'][Math.floor(Math.random() * 10)]
+        self.secondaryColor = ['#9b78ce', '#fecf60', '#9ee2fa', '#44b44e', '#b1248e', '#04aae4', '#e48134', '#abcb76', '#ed4a3c', '#ec008c'][Math.floor(Math.random() * 10)]
       });
   }
 }

@@ -44,7 +44,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top">{{ companyName }}</a>
+        <a class="navbar-brand page-scroll" href="#page-top" [ngStyle]="{'color': secondaryColor}">{{ companyName }}</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,7 +81,7 @@
       <div class="intro-text">
         <div class="intro-lead-in">Welcome To {{ companyName }}!</div>
         <div class="intro-heading">{{ catchPhrase }}</div>
-        <a href="/" class="page-scroll btn btn-xl">Team Zoltan!</a>
+        <a href="/" class="page-scroll btn btn-xl" [ngStyle]="{'background-color': secondaryColor, 'border-color': secondaryColor}">Team Zoltan!</a>
       </div>
     </div>
   </header>
@@ -98,7 +98,7 @@
       <div class="row text-center">
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-circle fa-stack-2x text-primary" [ngStyle]="{'color': secondaryColor, 'border-color': secondaryColor}"></i>
             <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">{{ bs }}</h4>
@@ -106,7 +106,7 @@
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-circle fa-stack-2x text-primary" [ngStyle]="{'color': secondaryColor, 'border-color': secondaryColor}"></i>
             <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">{{ bs }}</h4>
@@ -114,7 +114,7 @@
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-circle fa-stack-2x text-primary" [ngStyle]="{'color': secondaryColor, 'border-color': secondaryColor}"></i>
             <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">{{ bs }}</h4>
@@ -221,7 +221,7 @@
               </div>
             </li>
             <li class="timeline-inverted">
-              <div class="timeline-image">
+              <div class="timeline-image" [ngStyle]="{'background-color': secondaryColor, 'border-color': secondaryColor}">
                 <h4>Be Part
                   <br>Of Our
                   <br>Story!</h4>
