@@ -10,7 +10,7 @@ import {Youtube} from './youtube.model';
 
 export class YoutubeComponent {
   constructor(private _YoutubeService: YoutubeService) {};
-  youtube: Youtube;
+  // youtube: Youtube;
   src: string;
   ngOnInit() {
     var self = this;
@@ -22,7 +22,7 @@ export class YoutubeComponent {
         // self.src = url;
         var url = response.json().items[0].snippet.thumbnails.high.url;
         //console.log('>>> RANDOM YOUTUBE DATA', url );
-        self.src = url;
+        return self.src = url;
       });
   }
 }
