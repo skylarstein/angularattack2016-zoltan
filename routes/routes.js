@@ -12,6 +12,7 @@ const Blob    = require('../models/blob.js');
 const _       = require('underscore');
 const http    = require('http');
 const faker   = require('faker');
+const kantian = require('../models/kantian-sentences.js');
 
 router.get('/blob/:uuid', (req, res, next) => {
 
@@ -91,5 +92,23 @@ router.get('/random/words/:count', (req, res, next) => {
 router.get('/random/sentence/', (req, res, next) => { return res.status(200).send(faker.hacker.phrase()) });
 router.get('/lorem/sentence/', (req, res, next) => { return res.status(200).send(faker.lorem.sentence()) });
 router.get('/random/paragraph/:count', (req, res, next) => { return res.status(200).send(faker.lorem.paragraphs(req.params.count)) });
+
+router.get('/random/sentences/:count', (req, res, next) => {
+  let sentences = [];
+  for(var n = 0; n < req.params.count; ++n) {
+    sentences.push(kantian[Math.floor(Math.random() * kantian.length)]);
+  }
+  return res.status(200).send(sentences);
+});
+
+router.get('/random/company', (req, res, next) => {
+  return res.status(200).send({
+    companyName : faker.company.companyName(),
+    companySuffix : faker.company.companySuffix(),
+    catchPhrase : faker.company.catchPhrase(),
+    bs : faker.company.bs(),
+    bsBuzz : faker.company.bsBuzz()
+  });
+});
 
 module.exports = router;

@@ -5,6 +5,9 @@ import {EmployeeComponent} from './employee/employee.component';
 import {GiphyComponent} from './giphy/giphy.component';
 import {TemplateComponent} from './template/template.component';
 import {YoutubeComponent} from './youtube/youtube.component';
+import {enableProdMode} from '@angular/core';
+
+enableProdMode();
 
 bootstrap(AppComponent, [HTTP_PROVIDERS]);
 // bootstrap(GiphyComponent, [HTTP_PROVIDERS]);
