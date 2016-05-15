@@ -3,20 +3,26 @@ import {Component} from '@angular/core';
 // services
 import {CompanyService} from './company/company.service';
 import { GiphyService } from './giphy/giphy.service';
+import { YoutubeService } from './giphy/giphy.service';
 import {EmployeeService} from './employee/employee.service';
 
 @Component({
   selector: 'my-app',
   template: '<h1>The App</h1>',
-  providers: [CompanyService, GiphyService, EmployeeService]
+  providers: [CompanyService, GiphyService, YoutubeService, EmployeeService]
 })
 export class AppComponent {
-  constructor(private _CompanyService: CompanyService, private _GiphyService: GiphyService, private _EmployeeService: EmployeeService) { }
+  constructor(private _CompanyService: CompanyService, private _GiphyService: GiphyService, private _YoutubeService: YoutubeService, private _EmployeeService: EmployeeService) { }
     getCompanyName(word1: string, word2: string) {
-      this._CompanyService.getName(word1,word2);
+      this._CompanyService.getName();
     }
     getGiphy(phrase: string) {
       this._GiphyService.getImgUrl(phrase);
+    }
+    getVideo() {
+      this._YoutubeService.getVideo().then(function(result) {
+        console.log('>>> RANDOM YOUTUBE DATA', result.json());
+      });
     }
     getEmployee() {
       this._EmployeeService.getEmployee().subscribe(function(result) {
@@ -28,6 +34,7 @@ export class AppComponent {
       var word2 = 'dawg';//faker.random.word();
       this.getCompanyName(word1, word2);
       this.getGiphy('picard wtf');
+      this.getVideo();
       this.getEmployee();
     }
 }
