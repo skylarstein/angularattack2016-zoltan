@@ -17,7 +17,7 @@ var AppComponent = (function () {
     AppComponent.prototype.save = function () {
         var id = Math.floor(Math.random() * (99999999999999999 - 1)) + 1;
         var body = JSON.stringify({ blob: JSON.stringify(document.body.innerHTML) });
-        this.http.put('/blob/' + id.toString(), body, { headers: { 'Content-Type': 'application/json' } }).subscribe(function () {
+        this.http.put('/blob/' + id.toString(), body).subscribe(function () {
             console.log('saved id:', id);
         });
     };
