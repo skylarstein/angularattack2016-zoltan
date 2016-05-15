@@ -28,6 +28,14 @@ export class TemplateComponent {
   bsBuzz1: string;
   bsBuzz2: string;
   bsBuzz3: string;
+  bsBuzz4: string;
+  sentence1: string;
+  sentence2: string;
+  sentence3: string;
+  sentence4: string;
+  sentence5: string;
+  sentence6: string;
+  sentence7: string;
   companies: any[];
 
   ngOnInit() {
@@ -64,9 +72,22 @@ export class TemplateComponent {
         self.bsBuzz3 = companyData.bsBuzz;
         self.catchPhrase3 = companyData.catchPhrase;
       });
-      this._CompanyService.getKantianSentences().then(function(response) {
-        self.stuff            = response.json();
-      })
+    this._CompanyService.getCompany()
+      .then(function(response) {
+        let companyData = response.json()[0];
+        self.bs3 = companyData.bs;
+        self.bsBuzz3 = companyData.bsBuzz;
+        self.catchPhrase3 = companyData.catchPhrase;
+      });
+    this._CompanyService.getSentences().then(function(response) {
+        self.sentence1 = response.json()[0];
+        self.sentence2 = response.json()[1];
+        self.sentence3 = response.json()[2];
+        self.sentence4 = response.json()[3];
+        self.sentence5 = response.json()[4];
+        self.sentence6 = response.json()[5];
+        self.sentence7 = response.json()[6];
+    });
   }
 }
 
