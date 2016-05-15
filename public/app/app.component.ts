@@ -6,7 +6,7 @@ import {EmployeeService} from './employee/employee.service';
 
 @Component({
   selector: 'my-app',
-  template: '<h1>The App</h1>',
+  template: '',
   providers: [CompanyService, GiphyService, YoutubeService, EmployeeService]
 })
 
