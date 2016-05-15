@@ -64,6 +64,9 @@ export class TemplateComponent {
         self.bsBuzz3 = companyData.bsBuzz;
         self.catchPhrase3 = companyData.catchPhrase;
       });
+      this._CompanyService.getKantianSentences().then(function(response) {
+        self.stuff            = response.json();
+      })
   }
 }
 
