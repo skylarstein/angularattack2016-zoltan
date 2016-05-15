@@ -2,9 +2,15 @@
 
 Random company website generator
 
-Backend: Heroku NodeJS 6.1.0, serving Angular 2.0 client files from /public
+### Resources
 
-Shoutout to [Marak/faker.js](https://github.com/marak/Faker.js/) for loads of great randomized text and images
+* [Faker.js](https://github.com/marak/Faker.js)
+* [Bootstrap template](http://startbootstrap.com/template-overviews/agency)
+* [Kantian generator](http://www.barbalet.net/kant)
+* [Lorem Pixel](http://lorempixel.com/)
+* [Random Color](https://github.com/davidmerfield/randomColor)
+* [Font Awesome](http://fontawesome.io/?ref=devtoolsonline)
+* [Google Fonts](https://www.google.com/fonts)
 
 ### Production App
 
