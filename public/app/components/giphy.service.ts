@@ -7,9 +7,6 @@ export class GiphyService {
 
   getImgUrl(query: string) {
     var queryString : string = query.split(' ').join('+');
-    return this.http.get('http://api.giphy.com/v1/gifs/search?q=' + queryString + '&api_key=dc6zaTOxFJmzC ')
-      .subscribe(function(result) {
-        console.log(result, 'test');
-      });
+    return this.http.get('http://api.giphy.com/v1/gifs/search?q=' + queryString + '&api_key=dc6zaTOxFJmzC ');
   }
 }
