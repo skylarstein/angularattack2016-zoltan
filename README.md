@@ -18,4 +18,6 @@ https://team-zoltan.herokuapp.com
 
 * Create a local .env file. This is used to include sensitive credentials that should not be commited into source control. In the case of Heroku deployment these would be defined as config vars.
 
+`MONGODB_URI=mongodb://user:pass@server/db`
+
 * `npm start` to start the local Node server
