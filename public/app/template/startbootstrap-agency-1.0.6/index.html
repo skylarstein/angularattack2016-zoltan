@@ -81,10 +81,29 @@
       <div class="intro-text">
         <div class="intro-lead-in">Welcome To {{ companyName }}!</div>
         <div class="intro-heading">{{ catchPhrase }}</div>
-        <a href="/" class="page-scroll btn btn-xl" [ngStyle]="{'background-color': secondaryColor, 'border-color': secondaryColor}">Team Zoltan!</a>
+        <a href="/" class="page-scroll btn btn-xl" [ngStyle]="{'background-color': secondaryColor, 'border-color': secondaryColor}">{{bsBuzz}}!</a>
       </div>
     </div>
   </header>
+
+  <!-- Team Section -->
+  <section id="team" class="bg-light-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Our Amazing Team</h2>
+          <h3 class="section-subheading text-muted">{{ catchPhrase }}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <employee *ngFor="#employee of employees" [employee]="employee"></employee>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Services Section -->
   <section id="services">
@@ -92,7 +111,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">{{ bs }}</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -233,33 +252,13 @@
       </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-        </div>
-        <div class="row">
-          <employee *ngFor="#employee of employees" [employee]="employee"></employee>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" [ngStyle]="{'background-color': primaryColor}">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading">Contact {{ companyName }}</h2>
+            <h3 class="section-subheading text-muted">{{ bs }}</h3>
           </div>
         </div>
         <div class="row">
@@ -302,7 +301,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2016</span>
+            <span class="copyright">Copyright &copy; {{ companyName }} 2016</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
