@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// services
 var company_service_1 = require('./company/company.service');
 var giphy_service_1 = require('./giphy/giphy.service');
 var youtube_service_1 = require('./youtube/youtube.service');
@@ -22,17 +21,10 @@ var AppComponent = (function () {
         this._EmployeeService = _EmployeeService;
     }
     AppComponent.prototype.getCompanyName = function () {
-        this._CompanyService.getDomainName().then(function (result) {
-            //       console.log(JSON.stringify(result._body),'test');
-        });
+        this._CompanyService.getDomainName().then(function (result) { });
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
-<<<<<<< 49e961b007a814dd1c4a8cd07d58dfac5e5b60f6
-        this.getCompanyName();
-=======
-        // this.getEmployee();
->>>>>>> Add Bootstrap angency theme
     };
     AppComponent = __decorate([
         core_1.Component({

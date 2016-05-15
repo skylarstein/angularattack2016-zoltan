@@ -15,9 +15,9 @@ export class TemplateComponent {
   wordsOfWisdom: string;
   ngOnInit() {
     var self = this;
-    this._EmployeeService.getEmployee()
+    this._EmployeeService.getEmployees(2)
       .subscribe(function(response) {
-        let employeeData = response.json();
+        let employeeData = response.json()[0];
         self.imageUrl = employeeData.imageUrl;
         self.name = employeeData.name;
         self.jobTitle = employeeData.jobTitle;
