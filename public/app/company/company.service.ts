@@ -12,10 +12,10 @@ export class CompanyService {
   }
 
   getCompany() {
-    return this.http.get('/random/company').toPromise();
+    return this.http.get('/random/company/10').toPromise();
   }
 
-  getKantianSentences() {
+  getSentences() {
     return this.http.get('/random/sentences/10').toPromise();
   }
 }

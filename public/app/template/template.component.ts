@@ -28,6 +28,7 @@ export class TemplateComponent {
   bsBuzz1: string;
   bsBuzz2: string;
   bsBuzz3: string;
+  companies: any[];
 
   ngOnInit() {
     var self = this;
@@ -38,7 +39,7 @@ export class TemplateComponent {
 
     this._CompanyService.getCompany()
       .then(function(response) {
-        let companyData    = response.json();
+        let companyData    = response.json()[0];
         self.companyName   = companyData.companyName;
         self.companySuffix = companyData.companySuffix;
         self.catchPhrase1   = companyData.catchPhrase;
@@ -50,7 +51,7 @@ export class TemplateComponent {
 
     this._CompanyService.getCompany()
       .then(function(response) {
-        let companyData = response.json();
+        let companyData = response.json()[0];
         self.bs2 = companyData.bs;
         self.bsBuzz2 = companyData.bsBuzz;
         self.catchPhrase2 = companyData.catchPhrase;
@@ -58,7 +59,7 @@ export class TemplateComponent {
 
     this._CompanyService.getCompany()
       .then(function(response) {
-        let companyData = response.json();
+        let companyData = response.json()[0];
         self.bs3 = companyData.bs;
         self.bsBuzz3 = companyData.bsBuzz;
         self.catchPhrase3 = companyData.catchPhrase;
