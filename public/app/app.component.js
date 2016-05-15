@@ -9,31 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import { ROUTER_PROVIDERS } from '@angular/router';
-var router_1 = require('@angular/router');
-var http_1 = require('@angular/http');
 var AppComponent = (function () {
-    function AppComponent(http) {
-        this.http = http;
+    function AppComponent() {
     }
-    AppComponent.prototype.save = function () {
-        var id = Math.floor(Math.random() * (99999999999999999 - 1)) + 1;
-        var body = JSON.stringify({ blob: JSON.stringify(document.body.innerHTML) });
-        this.http.put('/blob/' + id.toString(), body).subscribe(function () {
-            console.log('saved id:', id);
-        });
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<button id="save" class="button" (click)=save()>Save your Random Template</button><site-template></site-template>',
+            template: '<site-template></site-template>',
             providers: []
-        }),
-        router_1.Routes([
-            { path: '/', component: AppComponent },
-            { path: '/:id', component: AppComponent }
-        ]), 
-        __metadata('design:paramtypes', [http_1.Http])
+        }), 
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
