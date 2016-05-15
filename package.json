@@ -4,7 +4,7 @@
   "description": "AngularAttack 2016 entry for Team Zoltan!",
   "main": "server.js",
   "scripts": {
-    "postinstall": "cd public && npm install",
+    "postinstall": "cd public && npm install && node_modules/.bin/tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -28,6 +28,7 @@
     "mongoose": "^4.4.17",
     "morgan": "^1.7.0",
     "node-env-file": "^0.1.8",
+    "typescript": "^1.8.10",
     "underscore": "^1.8.3"
   }
 }
