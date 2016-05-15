@@ -37,6 +37,9 @@ export class TemplateComponent {
   sentence6: string;
   sentence7: string;
   companies: any[];
+  randomIcon1: any;
+  randomIcon2: any;
+  randomIcon3: any;
 
   ngOnInit() {
     var self = this;
