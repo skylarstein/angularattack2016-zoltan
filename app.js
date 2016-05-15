@@ -15,7 +15,8 @@ const routes     = require('./routes/routes.js');
 
 // Connect to our database
 //
-mongoose.connect(process.env.MONGODB_URI);
+// We're not using /blob GET/PUT so disabling db for now (makes local deployment set easier)
+//mongoose.connect(process.env.MONGODB_URI);
 
 // Configure our Express app
 //
