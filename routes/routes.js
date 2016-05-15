@@ -84,8 +84,12 @@ router.get('/random/employees/:count', (req, res, next) => {
 
 router.get('/random/words/:count', (req, res, next) => {
   return res.status(200).send({
-    words : faker.random.words(req.params.count).split(' ')
+    words: faker.random.words(req.params.count).split(' ')
   });
 });
+
+router.get('/random/sentence/', (req, res, next) => { return res.status(200).send(faker.hacker.phrase()) });
+router.get('/lorem/sentence/', (req, res, next) => { return res.status(200).send(faker.lorem.sentence()) });
+router.get('/random/paragraph/:count', (req, res, next) => { return res.status(200).send(faker.lorem.paragraphs(req.params.count)) });
 
 module.exports = router;
