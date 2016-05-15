@@ -9,11 +9,11 @@ import {Http, HTTP_PROVIDERS} from '@angular/http';
 @Component({
   selector: 'my-app',
   template: '<button id="save" class="button" (click)=save()>Save your Random Template</button><site-template></site-template>',
-  providers: [CompanyService, GiphyService, YoutubeService, EmployeeService]
+  providers: []
 })
 
 export class AppComponent {
-  constructor(private http: Http, private _CompanyService: CompanyService, private _GiphyService: GiphyService, private _YoutubeService: YoutubeService, private _EmployeeService: EmployeeService) {
+  constructor(private http: Http) {
 
   }
   save() {
@@ -23,12 +23,4 @@ export class AppComponent {
           console.log('saved id:', id);
       });
   }
-
-  getCompanyName() {
-    this._CompanyService.getDomainName().then(function(result: any) {});
-  }
-
-  ngOnInit() {
-    this.getCompanyName();
-  }
-}
+})
