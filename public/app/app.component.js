@@ -23,15 +23,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.getCompanyName = function () {
         this._CompanyService.getDomainName().then(function (result) {
-            console.log(JSON.stringify(result._body), 'test');
-        });
-    };
-    AppComponent.prototype.getGiphy = function (phrase) {
-        this._GiphyService.getImgUrl(phrase);
-    };
-    AppComponent.prototype.getVideo = function () {
-        this._YoutubeService.getVideo().then(function (result) {
-            console.log('>>> RANDOM YOUTUBE DATA', result.json());
+            //       console.log(JSON.stringify(result._body),'test');
         });
     };
     AppComponent.prototype.getEmployee = function () {
@@ -41,9 +33,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
-        this.getGiphy('picard wtf');
         this.getCompanyName();
-        this.getVideo();
         this.getEmployee();
     };
     AppComponent = __decorate([
