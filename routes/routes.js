@@ -72,7 +72,7 @@ router.get('/random/employee', (req, res, next) => {
     imageUrl : faker.image.avatar(),
     name : faker.name.findName(),
     jobTitle : faker.name.jobTitle(),
-    wordsOfWisom : faker.hacker.phrase()
+    wordsOfWisdom : faker.hacker.phrase()
   });
 });
 
