@@ -19,9 +19,9 @@ export class GiphyComponent {
         var giphys: string[] = response.json().data;
         var randIndex: number = Math.round(Math.random() * (giphys.length - 1));
         var giphy: Object = giphys[randIndex];
-        console.log(giphy);
         var url: string = giphy['images']['original']['url'];
-        self.giphy = { src: url};
+
+        // self.giphy = { src: url};
         self.src = url;
         console.log(url);
       });

@@ -28,7 +28,11 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
+<<<<<<< 49e961b007a814dd1c4a8cd07d58dfac5e5b60f6
         this.getCompanyName();
+=======
+        // this.getEmployee();
+>>>>>>> Add Bootstrap angency theme
     };
     AppComponent = __decorate([
         core_1.Component({

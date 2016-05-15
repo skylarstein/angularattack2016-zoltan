@@ -11,7 +11,7 @@ import {Employee} from './employee.model';
 export class EmployeeComponent {
   constructor(private _EmployeeService: EmployeeService) { };
   name: string;
-  jobTitle: string; 
+  jobTitle: string;
   imageUrl: string;
   wordsOfWisdom: string;
   employees: Employee[];
