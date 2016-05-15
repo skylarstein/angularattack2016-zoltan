@@ -36,6 +36,10 @@ export class TemplateComponent {
   sentence5: string;
   sentence6: string;
   sentence7: string;
+  sentence8: string;
+  sentence9: string;
+  sentence10: string;
+  sentence11: string;
   companies: any[];
 
   ngOnInit() {
@@ -104,6 +108,10 @@ export class TemplateComponent {
         self.sentence5 = response.json()[4];
         self.sentence6 = response.json()[5];
         self.sentence7 = response.json()[6];
+        self.sentence8 = response.json()[7];
+        self.sentence9 = response.json()[8];
+        self.sentence10 = response.json()[9];
+        self.sentence11 = response.json()[10];
     });
   }
 }
