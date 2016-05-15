@@ -5,7 +5,7 @@ import { Http, HTTP_PROVIDERS } from '@angular/http';
 export class EmployeeService {
   constructor(private http: Http) { }
 
-  getEmployee() {
-    return this.http.get('random/employee');
+  getEmployees(count: number) {
+    return this.http.get('random/employees/' + count);
   }
 }

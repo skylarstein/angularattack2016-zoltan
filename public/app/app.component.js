@@ -26,13 +26,9 @@ var AppComponent = (function () {
             //       console.log(JSON.stringify(result._body),'test');
         });
     };
-    AppComponent.prototype.getEmployee = function () {
-        this._EmployeeService.getEmployee();
-    };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
         this.getCompanyName();
-        this.getEmployee();
     };
     AppComponent = __decorate([
         core_1.Component({

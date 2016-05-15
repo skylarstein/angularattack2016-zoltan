@@ -18,12 +18,8 @@ export class AppComponent {
      //       console.log(JSON.stringify(result._body),'test');
          });
     }
-    getEmployee() {
-        this._EmployeeService.getEmployee();
-    }
     ngOnInit() {
         this.getCompanyName();
         this.getCompanyName();
-        this.getEmployee();
     }
 }

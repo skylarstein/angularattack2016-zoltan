@@ -67,13 +67,19 @@ router.get('/http-get-proxy/:url', (req, res, next) => {
   }
 });
 
-router.get('/random/employee', (req, res, next) => {
-  return res.status(200).send({
-    imageUrl : faker.image.avatar(),
-    name : faker.name.findName(),
-    jobTitle : faker.name.jobTitle(),
-    wordsOfWisdom : faker.hacker.phrase()
-  });
+router.get('/random/employees/:count', (req, res, next) => {
+
+  let employees = [];
+  for(var n = 0; n < req.params.count; ++n) {
+    employees.push({
+      imageUrl : faker.image.avatar(),
+      name : faker.name.findName(),
+      jobTitle : faker.name.jobTitle(),
+      wordsOfWisdom : faker.hacker.phrase()
+    });
+  }
+
+  return res.status(200).send(employees);
 });
 
 router.get('/random/words/:count', (req, res, next) => {

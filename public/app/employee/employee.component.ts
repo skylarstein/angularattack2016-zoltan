@@ -14,15 +14,18 @@ export class EmployeeComponent {
   jobTitle: string; 
   imageUrl: string;
   wordsOfWisdom: string;
+  employees: Employee[];
+
   ngOnInit() {
     var self = this;
-    this._EmployeeService.getEmployee()
+    this._EmployeeService.getEmployees(2)
       .subscribe(function(response) {
-        let employeeData = response.json();
-        self.imageUrl = employeeData.imageUrl;
-        self.name = employeeData.name;
-        self.jobTitle = employeeData.jobTitle;
-        self.wordsOfWisdom = employeeData.wordsOfWisdom;
+        self.employees = response.json();
+        console.log('Got employees: ' + JSON.stringify(self.employees, null, 2));
+        self.imageUrl = self.employees[0].imageUrl;
+        self.name = self.employees[0].name;
+        self.jobTitle = self.employees[0].jobTitle;
+        self.wordsOfWisdom = self.employees[0].wordsOfWisdom;
       });
   }
 }
