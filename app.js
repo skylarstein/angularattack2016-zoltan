@@ -15,7 +15,9 @@ const routes     = require('./routes/routes.js');
 
 // Connect to our database
 //
-mongoose.connect(process.env.MONGODB_URI);
+// Currently disabled to ease local deployment setup since we are not
+// yet using /blob routes to PUT/GET randomized data
+//mongoose.connect(process.env.MONGODB_URI);
 
 // Configure our Express app
 //
