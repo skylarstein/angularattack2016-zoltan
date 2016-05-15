@@ -17,6 +17,12 @@
   font-family: 'Oswald';
 }
 
+#loading-text-subtitle {
+  font-family: 'Oswald';
+  font-style: italic;
+  font-size: 20px;
+}
+
 /*** css hacks ***/
 .list-inline.social-buttons li a i {
   margin-top: 9px;
