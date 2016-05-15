@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 // services
 var company_service_1 = require('./company/company.service');
 var giphy_service_1 = require('./components/giphy.service');
+var employee_service_1 = require('./employee/employee.service');
 var AppComponent = (function () {
-    function AppComponent(_CompanyService, _GiphyService) {
+    function AppComponent(_CompanyService, _GiphyService, _EmployeeService) {
         this._CompanyService = _CompanyService;
         this._GiphyService = _GiphyService;
+        this._EmployeeService = _EmployeeService;
     }
     AppComponent.prototype.getCompanyName = function (word1, word2) {
         this._CompanyService.getName(word1, word2);
@@ -23,19 +25,25 @@ var AppComponent = (function () {
     AppComponent.prototype.getGiphy = function (phrase) {
         this._GiphyService.getImgUrl(phrase);
     };
+    AppComponent.prototype.getEmployee = function () {
+        this._EmployeeService.getEmployee().subscribe(function (result) {
+            console.log('>>> RANDOM EMPLOYEE DATA', result.json());
+        });
+    };
     AppComponent.prototype.ngOnInit = function () {
         var word1 = 'yo'; //faker.random.word();
         var word2 = 'dawg'; //faker.random.word();
         this.getCompanyName(word1, word2);
         this.getGiphy('picard wtf');
+        this.getEmployee();
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: '<h1>The App</h1>',
-            providers: [company_service_1.CompanyService, giphy_service_1.GiphyService]
+            providers: [company_service_1.CompanyService, giphy_service_1.GiphyService, employee_service_1.EmployeeService]
         }), 
-        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService])
+        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService, employee_service_1.EmployeeService])
     ], AppComponent);
     return AppComponent;
 }());
