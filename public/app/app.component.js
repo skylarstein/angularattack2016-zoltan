@@ -18,7 +18,9 @@ var AppComponent = (function () {
         this._GiphyService = _GiphyService;
     }
     AppComponent.prototype.getCompanyName = function () {
-        this._CompanyService.getName();
+        this._CompanyService.getDomainName().then(function (result) {
+            console.log(JSON.stringify(result._body), 'test');
+        });
     };
     AppComponent.prototype.getGiphy = function (phrase) {
         this._GiphyService.getImgUrl(phrase);

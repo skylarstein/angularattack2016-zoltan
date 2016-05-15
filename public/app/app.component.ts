@@ -12,7 +12,9 @@ import { GiphyService } from './components/giphy.service';
 export class AppComponent {
     constructor(private _CompanyService: CompanyService, private _GiphyService: GiphyService) { }
     getCompanyName() {
-        this._CompanyService.getName();
+        this._CompanyService.getDomainName().then(function(result: any) {
+            console.log(JSON.stringify(result._body),'test');
+         });
       }
     getGiphy(phrase: string) {
       this._GiphyService.getImgUrl(phrase);
