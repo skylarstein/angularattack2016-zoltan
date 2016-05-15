@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 export class YoutubeService {
   constructor(private http: Http) { }
 
-  getVideo(query: string) {
+  getVideo() {
     //var queryString : string = query.split(' ').join('+');
     return this.http.get('https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyCdV-UnMPg6YImlEsfpqCbc4WNZUyksNn8&part=snippet,contentDetails,statistics,status').toPromise();
     //https://www.googleapis.com/youtube/v3/search?type=video&part=snippet,statistics&q=kittens&key={MY_KEY}

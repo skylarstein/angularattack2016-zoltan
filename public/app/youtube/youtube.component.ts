@@ -22,7 +22,7 @@ export class YoutubeComponent {
         // self.src = url;
         var url = response.json().items[0].snippet.thumbnails.high.url;
         //console.log('>>> RANDOM YOUTUBE DATA', url );
-        self.src = url;
+        return self.src = url;
       });
   }
 }
