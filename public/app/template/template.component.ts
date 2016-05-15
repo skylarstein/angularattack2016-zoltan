@@ -8,26 +8,13 @@ import {Employee}          from '../employee/employee.model';
 @Component({
   selector: 'site-template',
   templateUrl: 'app/template/startbootstrap-agency-1.0.6/index.html',
-  providers: [EmployeeService],
-  directives: [EmployeeComponent]
-})
-
-export class TemplateComponent {
-  constructor(private _EmployeeService: EmployeeService) { };
-  employees: Employee[];
+  directives: [EmployeeComponent],
   providers: [EmployeeService, CompanyService]
 })
 
 export class TemplateComponent {
-  constructor(private _EmployeeService: EmployeeService, private _CompanyService: CompanyService) {
-
-  };
-
-  name: string;
-  jobTitle: string;
-  imageUrl: string;
-  wordsOfWisdom: string;
-
+  constructor(private _EmployeeService: EmployeeService, private _CompanyService: CompanyService) {};
+  employees: Employee[];
   companyName: string;
   companySuffix: string;
   catchPhrase: string;
@@ -39,12 +26,6 @@ export class TemplateComponent {
     this._EmployeeService.getEmployees(3)
       .subscribe(function(response) {
         self.employees = response.json();
-
-        let employeeData   = response.json()[0];
-        self.imageUrl      = employeeData.imageUrl;
-        self.name          = employeeData.name;
-        self.jobTitle      = employeeData.jobTitle;
-        self.wordsOfWisdom = employeeData.wordsOfWisdom;
       });
 
     this._CompanyService.getCompany()
