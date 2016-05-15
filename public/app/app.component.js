@@ -30,8 +30,8 @@ var AppComponent = (function () {
             providers: []
         }),
         router_1.Routes([
-            { path: '/', name: 'Main', component: AppComponent, useAsDefault: true },
-            { path: '/:id', name: 'Saved', component: AppComponent }
+            { path: '/', component: AppComponent },
+            { path: '/:id', component: AppComponent }
         ]), 
         __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
