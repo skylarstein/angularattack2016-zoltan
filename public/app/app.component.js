@@ -28,9 +28,7 @@ var AppComponent = (function () {
         this._GiphyService.getImgUrl(phrase);
     };
     AppComponent.prototype.getEmployee = function () {
-        this._EmployeeService.getEmployee().subscribe(function (result) {
-            console.log('>>> RANDOM EMPLOYEE DATA', result.json());
-        });
+        this._EmployeeService.getEmployee();
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();

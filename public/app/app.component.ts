@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 // services
 import {CompanyService} from './company/company.service';
-import { GiphyService } from './giphy/giphy.service';
+import {GiphyService} from './giphy/giphy.service';
 import {EmployeeService} from './employee/employee.service';
 
 @Component({
@@ -21,9 +21,7 @@ export class AppComponent {
         this._GiphyService.getImgUrl(phrase);
     }
     getEmployee() {
-        this._EmployeeService.getEmployee().subscribe(function(result) {
-            console.log('>>> RANDOM EMPLOYEE DATA', result.json());
-        });
+        this._EmployeeService.getEmployee();
     }
     ngOnInit() {
         this.getCompanyName();
