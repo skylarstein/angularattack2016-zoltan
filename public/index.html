@@ -19,7 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic|Oswald' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
     <script src="systemjs.config.js"></script>
     <script>
       System.config({
@@ -36,7 +36,7 @@
   <my-app><div class="loading">
     <span id="loader"></span>
     <span id="loading-text">TEAM ZOLTAN!</span>
-    <div id="loading-text-subtitle">Hang on, we're synthesizing your website create-o-matic...</div>
+    <div id="loading-text-subtitle">Hang on... <script>document.write(faker.hacker.phrase())</script></div>
   </div></my-app>
   <script type="text/javascript">
 
