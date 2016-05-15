@@ -47,10 +47,11 @@
     var loader = document.getElementById('loader');
     var text = document.getElementById('loading-text');
     var classes = 'fa fa-' + randomIcon + ' fa-' + modifier + ' fa-3x fa-fw';
-    var colors = randomColor({ count: 2 });
+    var colors = randomColor({ count: 3 });
     var template = '<i class="' + classes + '"></i><span class="sr-only">Loading...</span>';
     loader.innerHTML = template;
     loader.style.color = colors[0];
     text.style.color = colors[1];
+    document.body.style.backgroundColor = colors[2];
   </script>
 </html>
