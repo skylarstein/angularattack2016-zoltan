@@ -31,7 +31,7 @@ router.get('/blob/:uuid', (req, res, next) => {
 });
 
 router.put('/blob/:uuid', (req, res, next) => {
-
+  console.log('REQUEST', req.body);
   const query = { uuid : req.params.uuid };
 
   const update = {

@@ -21,3 +21,8 @@
 .list-inline.social-buttons li a i {
   margin-top: 9px;
 }
+
+#save {
+  z-index: 9999999;
+  position: absolute;
+}
