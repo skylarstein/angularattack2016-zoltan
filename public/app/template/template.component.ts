@@ -16,6 +16,8 @@ export class TemplateComponent {
   constructor(private _EmployeeService: EmployeeService, private _CompanyService: CompanyService) {};
   employees: Employee[];
   companyName: string;
+  primaryColor: any;
+  secondaryColor: any;
   companySuffix: string;
   catchPhrase: string;
   bs: string;
