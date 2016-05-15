@@ -19,9 +19,15 @@ export class TemplateComponent {
   primaryColor: any;
   secondaryColor: any;
   companySuffix: string;
-  catchPhrase: string;
-  bs: string;
-  bsBuzz: string;
+  catchPhrase1: string;
+  catchPhrase2: string;
+  catchPhrase3: string;
+  bs1: string;
+  bs2: string;
+  bs3: string;
+  bsBuzz1: string;
+  bsBuzz2: string;
+  bsBuzz3: string;
 
   ngOnInit() {
     var self = this;
@@ -33,14 +39,29 @@ export class TemplateComponent {
     this._CompanyService.getCompany()
       .then(function(response) {
         let companyData    = response.json();
-        console.log(companyData)
         self.companyName   = companyData.companyName;
         self.companySuffix = companyData.companySuffix;
-        self.catchPhrase   = companyData.catchPhrase;
-        self.bs            = companyData.bs;
-        self.bsBuzz        = companyData.bsBuzz;
+        self.catchPhrase1   = companyData.catchPhrase;
+        self.bs1            = companyData.bs;
+        self.bsBuzz1        = companyData.bsBuzz;
         self.primaryColor = ['#318dbc', '#fc4538', '#1469aa', '#fb8c18',  '#0e427f', '#5ac2cb', '#7ecca8', '#fed200','#cdeac6', '#febb60'][Math.floor(Math.random() * 10)]
         self.secondaryColor = ['#9b78ce', '#fecf60', '#9ee2fa', '#44b44e', '#b1248e', '#04aae4', '#e48134', '#abcb76', '#ed4a3c', '#ec008c'][Math.floor(Math.random() * 10)]
+      });
+
+    this._CompanyService.getCompany()
+      .then(function(response) {
+        let companyData = response.json();
+        self.bs2 = companyData.bs;
+        self.bsBuzz2 = companyData.bsBuzz;
+        self.catchPhrase2 = companyData.catchPhrase;
+      });
+
+    this._CompanyService.getCompany()
+      .then(function(response) {
+        let companyData = response.json();
+        self.bs3 = companyData.bs;
+        self.bsBuzz3 = companyData.bsBuzz;
+        self.catchPhrase3 = companyData.catchPhrase;
       });
   }
 }
