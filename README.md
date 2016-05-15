@@ -1,6 +1,6 @@
 # Welcome to Team Zoltan's [AngularAttack](https://www.angularattack.com) 2016 Repo
 
-Backend: Heroku NodeJS 4.4.4, serving Angular client files from /public
+Backend: Heroku NodeJS 6.1.0, serving Angular client files from /public
 
 ### Production App
 
