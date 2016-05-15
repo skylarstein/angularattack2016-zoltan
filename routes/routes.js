@@ -59,9 +59,7 @@ router.get('/http-get-proxy/:url', (req, res, next) => {
       response.on('error', err => res.status(500).send(err.message));
     });
 
-    getRequest.on('error', function (err) {
-      res.status(500).send(err);
-    });
+    getRequest.on('error', err => res.status(500).send(err));
   }
   catch(e) {
     res.status(500).send(err);

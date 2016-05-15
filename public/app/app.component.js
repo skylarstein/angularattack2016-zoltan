@@ -11,23 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 // services
 var company_service_1 = require('./company/company.service');
+var giphy_service_1 = require('./components/giphy.service');
 var AppComponent = (function () {
-    function AppComponent(_CompanyService) {
+    function AppComponent(_CompanyService, _GiphyService) {
         this._CompanyService = _CompanyService;
+        this._GiphyService = _GiphyService;
     }
     AppComponent.prototype.getCompanyName = function () {
         this._CompanyService.getName();
     };
+    AppComponent.prototype.getGiphy = function (phrase) {
+        this._GiphyService.getImgUrl(phrase);
+    };
     AppComponent.prototype.ngOnInit = function () {
         this.getCompanyName();
+        this.getGiphy('picard wtf');
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: '<h1>The App</h1>',
-            providers: [company_service_1.CompanyService]
+            providers: [company_service_1.CompanyService, giphy_service_1.GiphyService]
         }), 
-        __metadata('design:paramtypes', [company_service_1.CompanyService])
+        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService])
     ], AppComponent);
     return AppComponent;
 }());
