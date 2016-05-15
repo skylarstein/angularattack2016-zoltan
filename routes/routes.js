@@ -101,14 +101,18 @@ router.get('/random/sentences/:count', (req, res, next) => {
   return res.status(200).send(sentences);
 });
 
-router.get('/random/company', (req, res, next) => {
-  return res.status(200).send({
-    companyName : fakeCompanyName(), //faker.company.companyName(),
-    companySuffix : faker.company.companySuffix(),
-    catchPhrase : faker.company.catchPhrase(),
-    bs : faker.company.bs(),
-    bsBuzz : faker.company.bsBuzz()
-  });
+router.get('/random/company/:count', (req, res, next) => {
+  let companies = [];
+  for(var n = 0; n < req.params.count; ++n) {
+    companies.push({
+      companyName : faker.company.companyName(),
+      companySuffix : faker.company.companySuffix(),
+      catchPhrase : faker.company.catchPhrase(),
+      bs : faker.company.bs(),
+      bsBuzz : faker.company.bsBuzz()
+    });
+  }
+  return res.status(200).send(companies);
 });
 
 var fakeCompanyName = function fakeCompanyName() {
@@ -130,7 +134,7 @@ var fakeCompanyName = function fakeCompanyName() {
   }
   else {
     A = partC[ roll(partC.length) ];
-    B = partD[ roll(partD.length) ];    
+    B = partD[ roll(partD.length) ];
   }
 
   return A + B;
