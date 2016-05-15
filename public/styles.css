@@ -16,3 +16,8 @@
 #loading-text {
   font-family: 'Oswald';
 }
+
+/*** css hacks ***/
+.list-inline.social-buttons li a i {
+  margin-top: 9px;
+}
