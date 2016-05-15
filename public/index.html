@@ -11,12 +11,14 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic|Oswald' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.js"></script>
 
     <script src="systemjs.config.js"></script>
     <script>
@@ -31,6 +33,24 @@
       System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
-  <my-app></my-app>
+  <my-app><div class="loading">
+    <span id="loader"></span>
+    <span id="loading-text">Zoltan</span>
+  </div></my-app>
   <site-template></site-template>
+  <script type="text/javascript">
+
+    // random loading icon
+    var icons = ['circle-o-notch', 'spinner', 'refresh', 'cog' ];
+    var randomIcon = icons[Math.floor(Math.random() * 4)];
+    var modifier = randomIcon === 'circle-o-notch' ? 'spin' : ['spin', 'pulse'][Math.floor(Math.random() * 2)];
+    var loader = document.getElementById('loader');
+    var text = document.getElementById('loading-text');
+    var classes = 'fa fa-' + randomIcon + ' fa-' + modifier + ' fa-3x fa-fw';
+    var colors = randomColor({ count: 2 });
+    var template = '<i class="' + classes + '"></i><span class="sr-only">Loading...</span>';
+    loader.innerHTML = template;
+    loader.style.color = colors[0];
+    text.style.color = colors[1];
+  </script>
 </html>
