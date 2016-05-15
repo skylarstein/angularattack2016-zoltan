@@ -1,9 +1,11 @@
 import {Component}       from '@angular/core';
+
 import {CompanyService}  from './company/company.service';
 import {GiphyService}    from './giphy/giphy.service';
 import {YoutubeService}  from './youtube/youtube.service';
 import {EmployeeService} from './employee/employee.service';
-
+//import { ROUTER_PROVIDERS } from '@angular/router';
+import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
 import {Http, HTTP_PROVIDERS} from '@angular/http';
 
 @Component({
@@ -11,6 +13,10 @@ import {Http, HTTP_PROVIDERS} from '@angular/http';
   template: '<button id="save" class="button" (click)=save()>Save your Random Template</button><site-template></site-template>',
   providers: []
 })
+@Routes([
+    {path: '/', name: 'Main', component: AppComponent, useAsDefault: true},
+    {path: '/:id', name: 'Saved', component: AppComponent}
+])
 
 export class AppComponent {
   constructor(private http: Http) {

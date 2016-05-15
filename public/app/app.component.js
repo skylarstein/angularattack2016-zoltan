@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { ROUTER_PROVIDERS } from '@angular/router';
+var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
 var AppComponent = (function () {
     function AppComponent(http) {
@@ -26,7 +28,11 @@ var AppComponent = (function () {
             selector: 'my-app',
             template: '<button id="save" class="button" (click)=save()>Save your Random Template</button><site-template></site-template>',
             providers: []
-        }), 
+        }),
+        router_1.Routes([
+            { path: '/', name: 'Main', component: AppComponent, useAsDefault: true },
+            { path: '/:id', name: 'Saved', component: AppComponent }
+        ]), 
         __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
     return AppComponent;
