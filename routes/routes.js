@@ -11,6 +11,7 @@ const router  = express.Router();
 const Blob    = require('../models/blob.js');
 const _       = require('underscore');
 const http    = require('http');
+const faker   = require('faker');
 
 router.get('/blob/:uuid', (req, res, next) => {
 
@@ -64,6 +65,21 @@ router.get('/http-get-proxy/:url', (req, res, next) => {
   catch(e) {
     res.status(500).send(err);
   }
+});
+
+router.get('/random/employee', (req, res, next) => {
+  return res.status(200).send({
+    imageUrl : faker.image.avatar(),
+    name : faker.name.findName(),
+    jobTitle : faker.name.jobTitle(),
+    wordsOfWisom : faker.hacker.phrase()
+  });
+});
+
+router.get('/random/words/:count', (req, res, next) => {
+  return res.status(200).send({
+    words : faker.random.words(req.params.count).split(' ')
+  });
 });
 
 module.exports = router;
