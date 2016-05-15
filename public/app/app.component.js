@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 // services
 var company_service_1 = require('./company/company.service');
 var giphy_service_1 = require('./giphy/giphy.service');
-var giphy_service_2 = require('./giphy/giphy.service');
+var youtube_service_1 = require('./youtube/youtube.service');
 var employee_service_1 = require('./employee/employee.service');
 var AppComponent = (function () {
     function AppComponent(_CompanyService, _GiphyService, _YoutubeService, _EmployeeService) {
@@ -49,12 +49,11 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: '<h1>The App</h1>',
-            providers: [company_service_1.CompanyService, giphy_service_1.GiphyService, giphy_service_2.YoutubeService, employee_service_1.EmployeeService]
+            providers: [company_service_1.CompanyService, giphy_service_1.GiphyService, youtube_service_1.YoutubeService, employee_service_1.EmployeeService]
         }), 
-        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService, (typeof (_a = typeof giphy_service_2.YoutubeService !== 'undefined' && giphy_service_2.YoutubeService) === 'function' && _a) || Object, employee_service_1.EmployeeService])
+        __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService, youtube_service_1.YoutubeService, employee_service_1.EmployeeService])
     ], AppComponent);
     return AppComponent;
-    var _a;
 }());
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 // services
 import {CompanyService} from './company/company.service';
 import { GiphyService } from './giphy/giphy.service';
-import { YoutubeService } from './giphy/giphy.service';
+import { YoutubeService } from './youtube/youtube.service';
 import {EmployeeService} from './employee/employee.service';
 
 @Component({
