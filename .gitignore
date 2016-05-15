@@ -1,8 +1,8 @@
 .env
 .DS_Store
 npm-debug.log*
-src/app/**/*.js
-src/app/**/*.js.map
+/public/app/**/*.js
+/public/app/**/*.js.map
 
 .idea
 public/typings/**
