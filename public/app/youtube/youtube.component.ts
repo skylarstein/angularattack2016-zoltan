@@ -10,7 +10,7 @@ import {Youtube} from './youtube.model';
 
 export class YoutubeComponent {
   constructor(private _YoutubeService: YoutubeService) {};
-  youtube: Youtube;
+  // youtube: Youtube;
   src: string;
   ngOnInit() {
     var self = this;
