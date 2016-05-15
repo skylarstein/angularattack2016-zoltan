@@ -29,7 +29,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>The App</h1>',
+            template: '',
             providers: [company_service_1.CompanyService, giphy_service_1.GiphyService, youtube_service_1.YoutubeService, employee_service_1.EmployeeService]
         }), 
         __metadata('design:paramtypes', [company_service_1.CompanyService, giphy_service_1.GiphyService, youtube_service_1.YoutubeService, employee_service_1.EmployeeService])
