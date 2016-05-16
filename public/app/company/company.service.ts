@@ -8,14 +8,14 @@ export class CompanyService {
   constructor(private http: Http) { }
 
   getName() {
-    return this.http.get('/random/words/2').toPromise();
+    return this.http.get('https://team-zoltan.herokuapp.com/random/words/2').toPromise();
   }
 
   getCompany() {
-    return this.http.get('/random/company/10').toPromise();
+    return this.http.get('https://team-zoltan.herokuapp.com/random/company/10').toPromise();
   }
 
   getSentences() {
-    return this.http.get('/random/sentences/10').toPromise();
+    return this.http.get('https://team-zoltan.herokuapp.com/random/sentences/10').toPromise();
   }
 }

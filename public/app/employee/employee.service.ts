@@ -6,6 +6,6 @@ export class EmployeeService {
   constructor(private http: Http) { }
 
   getEmployees(count: number) {
-    return this.http.get('random/employees/' + count);
+    return this.http.get('https://team-zoltan.herokuapp.com/random/employees/' + count);
   }
 }

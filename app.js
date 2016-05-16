@@ -12,6 +12,7 @@ const logger     = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const routes     = require('./routes/routes.js');
+const cors       = require('cors');
 
 // Connect to our database
 //
@@ -22,6 +23,7 @@ const routes     = require('./routes/routes.js');
 //
 const app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
