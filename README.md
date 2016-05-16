@@ -14,7 +14,8 @@ Random company website generator
 
 ### Production App
 
-https://team-zoltan.herokuapp.com
+https://zoltan.2016.angularattack.io (Surge flavor)
+https://team-zoltan.herokuapp.com (Heroku/Node flavor)
 
 ### Local environment setup
 
@@ -26,4 +27,11 @@ https://team-zoltan.herokuapp.com
 
 * `npm install` to install the NodeJS dependencies, the Angular client side dependencies, and to compile the client side TypeScript. See the "postinstall" script command in /package.json for details.
 
-* `npm start` to start the local Node server
+* `npm start` to start the local Node server on port 3003 (unless overridden by the PORT environment variable). The node server will server the static client files out of /public.
+
+### Surge deployment
+
+The static client files reside within the "public" directory in this repository. The public/CNAME file tells surge where to deploy the files.
+
+* `npm install -g surge`
+* `surge public`
