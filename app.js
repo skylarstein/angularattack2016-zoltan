@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const routes     = require('./routes/routes.js');
 const cors       = require('cors');
+const compression = require('compression');
 
 // Connect to our database
 //
@@ -27,6 +28,7 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
+app.use(compression());
 
 // HTTPS all the time. Redirect to HTTPS if I find the Heroku header.
 //
